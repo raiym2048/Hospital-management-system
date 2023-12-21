@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DbFunctions {
+
     public Connection connect_to_db(){
         Connection conn=null;
         try{
@@ -28,6 +29,54 @@ public class DbFunctions {
         }
         return conn;
     }
+    public List<Patient> searchPatients(Connection conn, String table_name, String searchString) {
+        Statement statement;
+        ResultSet rs = null;
+        List<Patient> result = new ArrayList<>();
+        System.out.println("the table name: "+table_name);
+
+        try {
+            // Build the SQL query based on the search criteria
+            String query = String.format("SELECT * FROM %s WHERE " +
+                            "id::text LIKE '%%%s%%' OR " +
+                            "name LIKE '%%%s%%' OR " +
+                            "phone LIKE '%%%s%%' OR " +
+                            "address::text LIKE '%%%s%%' OR " +
+                            "doctor_name LIKE '%%%s%%' OR " +
+                            "diseases LIKE '%%%s%%' OR " +
+                            "count::text LIKE '%%%s%%'",
+                    table_name,
+                    searchString, searchString, searchString,
+                    searchString, searchString, searchString, searchString);
+
+            statement = conn.createStatement();
+            rs = statement.executeQuery(query);
+            int i = 0;
+            System.out.println("start while: ");
+
+            // Iterate over the result set and populate the list
+            while (rs.next()) {
+                i++;
+                System.out.println("the i: "+i);
+                Patient patient = new Patient();
+                patient.setId(rs.getInt("id"));
+                patient.setTime(rs.getString("time"));
+                patient.setNumber(rs.getString("phone"));
+                patient.setPatient_name(rs.getString("name"));
+                patient.setAddress(rs.getString("address"));
+                patient.setDiseases(rs.getString("diseases"));
+                patient.setDoctor_name(rs.getString("doctor_name"));
+                patient.setCount(rs.getInt("count"));
+
+                result.add(patient);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return result;
+    }
+
     public void delete_row_by_id(Connection conn,String table_name, int id){
         Statement statement;
         try{

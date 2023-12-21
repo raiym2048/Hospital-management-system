@@ -13,7 +13,7 @@
    <children>
       <Pane prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #8641be;">
          <children>
-            <TextField fx:id="search" layoutX="168.0" layoutY="19.0" prefHeight="26.0" prefWidth="203.0" promptText="поиск..." style="-fx-background-color: #a174c7; -fx-background-radius: 14px;" />
+            <TextField fx:id="searchText" layoutX="168.0" layoutY="19.0" onKeyPressed="#onSearch" prefHeight="26.0" prefWidth="203.0" promptText="поиск..." style="-fx-background-color: #a174c7; -fx-background-radius: 14px;" />
             <Button fx:id="addPaticientAccount" layoutX="462.0" layoutY="19.0" mnemonicParsing="false" onAction="#onAdding" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: #7bbe41;" text="добавить в учет пациента" textFill="#f9fcf6">
                <font>
                   <Font size="10.0" />

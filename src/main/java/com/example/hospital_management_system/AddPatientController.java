@@ -107,7 +107,7 @@ public class AddPatientController {
 
         // Set up a Timeline with a KeyFrame
         Timeline timeline = new Timeline(
-                new KeyFrame(Duration.seconds(4), event -> clearText())
+                new KeyFrame(Duration.seconds(2.5), event -> clearText())
         );
 
         // Set the timeline to only trigger once

@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -61,7 +62,7 @@ public class PatientAccountController {
     private TableColumn<Patient, String> phone;
 
     @FXML
-    private TextField search;
+    private TextField searchText;
 
     @FXML
     private TableColumn<Patient, String> time;
@@ -77,6 +78,31 @@ public class PatientAccountController {
 
     @FXML
     private TableColumn<Patient, Void> update;
+
+    @FXML
+    void onSearch(KeyEvent event) {
+        String search = searchText.getText();
+        if(search.isEmpty()){
+            all_patients.getItems().clear();
+
+            load();
+            loadPatients(conn);
+            return;
+        }
+        System.out.println("Search Query: " + search);
+
+        // Clear the existing items in the table
+        all_patients.getItems().clear();
+
+        // Perform the search and update the table with the result
+        List<Patient> searchResult = dbFunctions.searchPatients(conn, "patient", search);
+        if (searchResult != null && !searchResult.isEmpty()) {
+            all_patients.getItems().addAll(searchResult);
+        } else {
+            System.out.println("No matching results found.");
+        }
+
+    }
 
     @FXML
     void onLogOut(ActionEvent event) {
