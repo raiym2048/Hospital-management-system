@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital_management_system.AddPatientController">
+    <children>
+        <Pane prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #8641be;">
+            <children>
+                <Text fx:id="userEmail" fill="WHITE" layoutX="516.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="userEmail" />
+            <Button fx:id="logOut" layoutX="416.0" layoutY="18.0" mnemonicParsing="false" onAction="#onLogOut" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #ffffff; -fx-background-radius: 14px; -fx-border-radius: 14px;" text="log out" textFill="#89c143" />
+            <Button fx:id="main" layoutX="328.0" layoutY="18.0" mnemonicParsing="false" onAction="#onMain" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #ffffff; -fx-background-radius: 14px; -fx-border-radius: 14px;" text="accounts" textFill="#89c143" />
+            <Button layoutX="238.0" layoutY="17.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #ffffff; -fx-background-radius: 14px; -fx-border-radius: 14px;" text="log out" textFill="#89c143" />
+            <Button layoutX="140.0" layoutY="18.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #ffffff; -fx-background-radius: 14px; -fx-border-radius: 14px;" text="log out" textFill="#89c143" />
+            </children>
+        </Pane>
+      <Pane prefHeight="341.0" prefWidth="600.0">
+         <children>
+            <TextField fx:id="patient_name" layoutX="100.0" layoutY="33.0" promptText="имя пациента" style="-fx-background-radius: 14px;" />
+            <TextField fx:id="phone" layoutX="99.0" layoutY="79.0" promptText="номер пациента" style="-fx-background-radius: 14px;" />
+            <TextField fx:id="address" layoutX="99.0" layoutY="123.0" promptText="адрес пациента" style="-fx-background-radius: 14px;" />
+            <TextField fx:id="doctors_name" layoutX="99.0" layoutY="170.0" promptText="имя доктора" style="-fx-background-radius: 14px;" />
+            <TextField fx:id="deseases" layoutX="99.0" layoutY="215.0" promptText="болезнь" style="-fx-background-radius: 14px;" />
+            <Button fx:id="add" layoutX="317.0" layoutY="258.0" mnemonicParsing="false" onAction="#onSave" prefHeight="26.0" prefWidth="157.0" style="-fx-background-color: #ffffff; -fx-background-radius: 14px; -fx-border-color: #8641be; -fx-border-radius: 14px;" text="ADD" textFill="#89c143" />
+            <TextField fx:id="count" layoutX="101.0" layoutY="259.0" promptText="сумма/цена" style="-fx-background-radius: 14px;" />
+            <Text fx:id="timelyText" fill="#2ed744" layoutX="355.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children>
+      </Pane>
+    </children>
+</VBox>
