@@ -13,8 +13,6 @@
                 <Text fx:id="userEmail" fill="WHITE" layoutX="516.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="userEmail" />
                 <Button fx:id="logOut" layoutX="416.0" layoutY="18.0" mnemonicParsing="false" onAction="#onLogOut" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #ffffff; -fx-background-radius: 14px; -fx-border-radius: 14px;" text="log out" textFill="#89c143" />
                 <Button fx:id="main" layoutX="328.0" layoutY="18.0" mnemonicParsing="false" onAction="#onMain" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #ffffff; -fx-background-radius: 14px; -fx-border-radius: 14px;" text="accounts" textFill="#89c143" />
-                <Button layoutX="238.0" layoutY="17.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #ffffff; -fx-background-radius: 14px; -fx-border-radius: 14px;" text="log out" textFill="#89c143" />
-                <Button layoutX="140.0" layoutY="18.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #ffffff; -fx-background-radius: 14px; -fx-border-radius: 14px;" text="log out" textFill="#89c143" />
             </children>
         </Pane>
         <Pane prefHeight="341.0" prefWidth="600.0">
